@@ -1,0 +1,14 @@
+package javaplacement;
+
+public class Record implements Comparable{
+	public String productCode;
+	public String nutrientCode;
+	public String nutrientName;
+	public Record(String productCode, String nutrientCode, String nutrientName){
+		this.productCode = productCode;
+		this.nutrientCode = nutrientCode;
+		this.nutrientName = nutrientName;
+	}
+	
+	
+}

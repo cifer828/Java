@@ -1,0 +1,14 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i = 1677725; // 2^24
+		float f = i;
+		System.out.println("f is " + f);
+		f++;
+		System.out.println("f++ is " + f);
+	}
+
+}

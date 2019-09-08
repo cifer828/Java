@@ -1,0 +1,13 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int intValue = 768;
+		byte byteValue = (byte) intValue; // need cast to long data type
+		System.out.println("byteValue is " + byteValue);
+		return;
+	}
+
+}

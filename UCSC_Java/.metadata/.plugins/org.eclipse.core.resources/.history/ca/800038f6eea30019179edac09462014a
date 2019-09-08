@@ -1,0 +1,66 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+public class TestLetterGrader {
+	private String inputFile;
+	private String outputFile;
+	private int studentNum;	// number of students
+	private ArrayList studentArray = new ArrayList();
+
+	private BufferedWriter bufferedWriter = null;
+
+	public void TestLetterGrader(String inp, String outp) {
+		this.inputFile = inp;
+		this.outputFile = outp;
+	}
+	
+	public void readInputFile(String[] args){
+		if (args.length < 2){
+			System.out.println("Usage: java TestLetterGrader [inputFile] [outputFile]");
+			return;
+		}
+		this.inputFile = args[0];
+		this.outputFile = args[1];
+//		else{
+//			System.out.printf("Letter grade has been calculated for students listed in input file %s and written to output file %s ", args[0], args[1]);
+//		}
+	}
+	
+	private processInputFiles(){
+		BufferedReader bufferedReader = null;
+		String line;
+		String [] splitedLine;
+		try { 
+			// create stream buffer
+			bufferedReader = new BufferedReader(new FileReader(this.inputFile));
+//			bufferedWriter = new BufferedWriter(new FileWriter(outputFileName));
+//			PrintWriter textPrintStream = new PrintWriter(bufferedWriter);
+			int lineNum = 1; // line number = student number
+			while ((line=bufferedReader.readLine()) != null) {
+				splitedLine = line.split(",");
+				Student s = new Student()
+				studentArray.add(e)
+//				System.out.printf("Student #: %d %s\n", lineNum, line);
+//				textPrintStream.printf("Student #%d is: \" %s \" whose raw scores are: ", lineNum++, splitedLine[0]);
+				for(int i=1;i<splitedLine.length;i++)
+					textPrintStream.print(splitedLine[i] + ':');
+				textPrintStream.println();
+			}
+			bufferedReader.close();
+			textPrintStream.close();
+		}
+		catch (Exception e) {
+		System.out.println("The file input_file.txt is not available in default folder\n");
+		//e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {
+		processCLArguments(args);
+		if (args.length >= 2)
+			processInputOutputFiles(args);
+	}
+}

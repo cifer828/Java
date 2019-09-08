@@ -1,0 +1,30 @@
+
+package javaplacement;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.List;
+
+public class DataModel {
+	private final String NUTRIENT_FILE = "Nutrient.csv";
+	public List<Record> recordList;
+	public void readFile(){
+		String line;
+//		try{
+			BufferedReader br;
+			br = new BufferedReader(new FileReader(this.NUTRIENT_FILE));
+			System.out.println(1);
+			while ((line=br.readLine()) != null) {
+				String [] one_record = line.split(",");
+				recordList.add(new Record(one_record[0], one_record[1], one_record[2])); 
+			}
+//		}
+//		catch(Exception e){
+//			System.out.println("The file is not available.");
+//		}
+	}
+	public static void main(String args[]){
+		DataModel dm = new DataModel();
+		dm.readFile();
+	}
+}
+

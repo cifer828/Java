@@ -1,0 +1,20 @@
+package javaplacement;
+
+public class Record implements Comparable{
+	private String productCode;
+	private String nutrientCode;
+	private String nutrientName;
+	public Record(String productCode, String nutrientCode, String nutrientName){
+		this.productCode = productCode;
+		this.nutrientCode = nutrientCode;
+		this.nutrientName = nutrientName;
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}

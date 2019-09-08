@@ -1,0 +1,31 @@
+package lab0b;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Factorial {
+	public int calculateFactorial(int number) {
+		//write your code here to calculate factorial using data-type as int
+		//it should take care of number being 0 or negative as well. 
+		return 0;
+	}
+
+	public BigInteger calculateBigFactorial (int number) {		
+		//write your code here to calculate factorial using data-type as BigInteger
+		//it should take care of number being 0 or negative as well. 
+
+		return new BigInteger("0");
+	}
+	
+	public static void main(String[] args) {
+		Factorial f = new Factorial();							//create Factorial object
+		
+		System.out.println("Factorial upto which number?");		//display console message
+		Scanner input = new Scanner(System.in);					//create object to capture keyboard input
+		int number = input.nextInt();							//get user input
+		input.close();
+		//Write code here to print the output as shown
+		
+	}
+}
+

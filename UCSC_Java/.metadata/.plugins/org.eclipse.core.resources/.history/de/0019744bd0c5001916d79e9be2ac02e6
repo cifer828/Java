@@ -1,0 +1,13 @@
+package javaplacement;
+
+import java.util.List;
+
+public class Nutrient {
+	private String nutrientCode;
+	private String nutrientName;
+	private List<String> products;
+	public Nutrient(String nutrientCode, String nutrientName){
+		this.nutrientCode = nutrientCode;
+		this.nutrientName = nutrientName;
+	}
+}

@@ -1,0 +1,102 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class TestLetterGrader {
+	private String inputFile;
+	private String outputFile;
+	private int studentNum;	// number of students
+	private ArrayList<Student> studentArray = new ArrayList();
+	public void readInputFile(String[] args){
+		this.inputFile = args[0];
+		this.outputFile = args[1];
+		this.processInputFiles();
+	}
+	private void processInputFiles(){
+		// read input file into data
+		String line;
+		String [] splitedLine;
+		try { 
+			// create stream buffer
+			BufferedReader br = new BufferedReader(new FileReader(this.inputFile));
+			while ((line=br.readLine()) != null) {
+				splitedLine = line.split(",");
+				this.studentArray.add(new Student(splitedLine));
+			}
+			br.close();
+			this.studentNum = this.studentArray.size();
+		}
+		catch (Exception e) {
+			System.out.printf("The file %s is not available in default folder\n", this.inputFile);
+		}
+	}
+	public void writeOutputFile(){
+		// write output file with format
+		try{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(this.outputFile));
+			Collections.sort(this.studentArray);
+			for(Student stu: this.studentArray){
+				bw.write(stu.getName()+":\t\t" + stu.getGrade() + "\n");
+			}
+			bw.flush();
+			bw.close();
+		}
+		catch(Exception e) {
+			System.out.printf("Ouput Error\n");
+		}
+	}
+	public void outputStat(){
+		// print statistic result on screen
+		System.out.println();
+		System.out.printf("Letter grade has been calculated for students listed in input file %s and written to output file %s ", 
+				this.inputFile, this.outputFile);
+		System.out.println("\nHere is the class averages:");
+		System.out.println("\t\tQ1\tQ2\tQ3\tQ4\tMidI\tMidII\tFinal");
+		System.out.print("Average");
+		for(int i=0; i<this.studentNum; i++)
+			System.out.printf("%.2f\t", this.testAvgScore(i));
+		System.out.print("\nMinimum");
+		for(int i=0; i<this.studentNum; i++)
+			System.out.printf("%d\t", this.testMinScore(i));
+		System.out.print("\nMaximum");
+		for(int i=0; i<this.studentNum; i++)
+			System.out.printf("%d\t", this.testMaxScore(i));	
+	}
+	private double testAvgScore(int testNum){
+		// return average score in a certain test
+		int totalScore = 0;
+		for(Student stu: this.studentArray)
+			totalScore += stu.getScore(testNum);
+		return totalScore / this.studentNum;
+	}
+	private int testMaxScore(int testNum){
+		// return the max score in a certain test
+		int maxScore = 0;
+		for(Student stu: this.studentArray)
+			maxScore = stu.getScore(testNum)>maxScore ? stu.getScore(testNum):maxScore;
+		return maxScore;
+	}
+	private int testMinScore(int testNum){
+		// return the min score in a certain test
+		int minScore = 100;
+		for(Student stu: this.studentArray)
+			minScore = stu.getScore(testNum)<minScore ? stu.getScore(testNum):minScore;
+		return minScore;
+	}
+	public static void main(String[] args) {
+		if (args.length < 2){
+			System.out.println("Usage: java TestLetterGrader [inputFile] [outputFile]");
+			return;
+		}
+		if (args.length >= 2){
+			TestLetterGrader tlg = new TestLetterGrader();
+			tlg.readInputFile(args);
+			tlg.writeOutputFile();
+			tlg.outputStat();
+		}
+	}
+}

@@ -1,0 +1,23 @@
+
+package javaplacement;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class DataModel {
+	public void readFile(){
+		String line;
+		String[] splitedLine = null;
+		try{
+			BufferedReader br = null;
+			br = new BufferedReader(new FileReader("Nutrients.csv"));
+			while ((line=br.readLine()) != null) {
+				splitedLine = line.split(",");
+			}
+			System.out.println(splitedLine[0]);
+		}
+		catch(Exception e){
+			System.out.println("The file is not available.");
+		}
+	}
+}

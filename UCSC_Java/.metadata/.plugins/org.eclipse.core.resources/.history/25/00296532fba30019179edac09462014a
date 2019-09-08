@@ -1,0 +1,50 @@
+public class Student implements Comparable<Student> {
+	private String name;
+	private int [] score;
+	private double finalScore;
+	private byte grade;
+	public Student(String [] line){
+		// use one line data to extract student data
+		this.name = line[0];
+		this.score = new int[line.length - 1];	// initial score array base on test numbers
+		for(int i=0; i< this.score.length; i++){
+			this.score[i] = Integer.parseInt(line[i+1]);
+		}
+		this.calGrade();
+	}
+	private void calGrade() {
+		// calculate student's final score and grade
+		this.finalScore = (this.score[0] + this.score[1] + this.score[2] + this.score[3]) * 0.1 +
+				this.score[4]*0.2 + this.score[5]*0.15 + this.score[6]*0.25;
+		if(this.finalScore >= 90)
+			this.grade = 'A';
+		else if(this.finalScore >=80)
+			this.grade = 'B';
+		else if(this.finalScore >=70)
+			this.grade = 'C';
+		else if(this.finalScore >=60)
+			this.grade = 'D';
+		else
+			this.grade = 'F';
+	}
+	public String getName(){
+		return this.name;
+	}
+	public int getScore(int testNum){
+		return this.score[testNum];
+	}
+	public char getGrade(){ 
+		return (char)this.grade;
+	}
+	@Override
+	public int compareTo(Student s) {
+		// compare student object based on their names
+		return s.getName().compareTo(s.getName());
+	}
+	public static void main(String args[]){
+		String [] t = {"Thui Bhu", "100", "90", "80", "100", "89", "99", "88"};
+		Student s = new Student(t);
+		System.out.println(s.getGrade());
+	}
+	
+}

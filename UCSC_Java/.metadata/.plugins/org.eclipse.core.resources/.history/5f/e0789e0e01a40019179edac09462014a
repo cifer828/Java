@@ -1,0 +1,94 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+class Student implements Comparable<Student> {
+	private String name;
+	private int [] score;
+	private double finalScore;
+	private byte grade;
+	public Student(String [] line){
+		// use one line data to extract student data
+		this.name = line[0].trim();
+		this.score = new int[line.length - 1];	// initial score array base on test numbers
+		for(int i=0; i< this.score.length; i++){
+			this.score[i] = Integer.parseInt(line[i+1].trim());
+		}
+	}
+	public void calGrade() {
+		// calculate student's final score and grade
+		this.finalScore = (this.score[0] + this.score[1] + this.score[2] + this.score[3]) * 0.1 +
+				this.score[4]*0.2 + this.score[5]*0.15 + this.score[6]*0.25;
+		if(this.finalScore >= 90)
+			this.grade = 'A';
+		else if(this.finalScore >=80)
+			this.grade = 'B';
+		else if(this.finalScore >=70)
+			this.grade = 'C';
+		else if(this.finalScore >=60)
+			this.grade = 'D';
+		else
+			this.grade = 'F';
+	}
+	public String getName(){
+		return this.name;
+	}
+	public int getScore(int testNum){
+		return this.score[testNum];
+	}
+	public char getGrade(){ 
+		return (char)this.grade;
+	}
+	@Override
+	public int compareTo(Student s) {
+		// compare student object based on their names
+		return this.getName().compareTo(s.getName());
+	}
+}
+
+public class LetterGrader {
+	private String inputFile;
+	private String outputFile;
+	private int studentNum;	// number of students
+	private int testNum; // number of tests
+	private ArrayList<Student> studentArray = new ArrayList();
+	public LetterGrader(String inp, String outp){
+		// constructor method
+		this.inputFile = inp;
+		this.outputFile = outp;
+	}
+	public void readscore(){
+		// reads score and stores the data in member variables
+		String line;
+		String [] splitedLine;
+		try { 
+			// create stream buffer
+			BufferedReader br = new BufferedReader(new FileReader(this.inputFile));
+			while ((line=br.readLine()) != null) {
+				splitedLine = line.split(",");
+				testNum = splitedLine.length - 1;
+				this.studentArray.add(new Student(splitedLine));
+			}
+			br.close();
+			this.studentNum = this.studentArray.size();
+		}
+		catch (Exception e) {
+			System.out.printf("The file %s is not available in default folder\n", this.inputFile);
+			System.exit(0);
+		}
+	}
+	public void calcLetterGrade(){
+		//determines letter grade and stores information
+		for(Student stu: this.studentArray)
+			stu.calGrade();
+	}
+	public void printGrade(){
+		
+	}
+	public void displayAverages(){
+		
+	}
+	public void doCleanup(){
+		
+	}
+}

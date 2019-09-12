@@ -1,0 +1,13 @@
+package test;
+
+public class switchNew {
+	String methodD(int num) {
+		@SuppressWarnings("preview")
+		String result = switch (num % 2) {
+		case 0: break "even";
+		case 1: break "odd";
+		default: break "It's insane";
+		};
+		return result;
+		}
+}

@@ -19,7 +19,7 @@ public class FirstJavaHello {
 		System.out.print("Enter the radius: ");
 		int radius = readInput.nextInt();
 		// input pi
-		System.out.print("Enter the ¦Ð value: ");
+		System.out.print("Enter the ï¿½ï¿½ value: ");
 		double pi = readInput.nextDouble();
 		double area= pi * radius * radius;
 		System.out.print("The area is: " + area + "\n");
@@ -32,7 +32,7 @@ public class FirstJavaHello {
 		System.out.print("What is your first name?: ");
 		// only use the first character
 		char yourInitial = readInput.next().charAt(0);
-		readInput.nextLine();
+		// readInput.nextLine();
 		System.out.println("Hello Mr. " + yourInitial + ".");
 		
 		//extra line feed
@@ -90,7 +90,7 @@ public class FirstJavaHello {
 		System.out.println();
 		System.out.printf("%-16s%-16s%-16s%5d", firstName ,lastName, city, zipCode); 
 		System.out.printf("\n");
-		
+		readInput.close();
 	}
 	
 	public static void main(String[] args) {
@@ -99,8 +99,8 @@ public class FirstJavaHello {
 //		System.out.println("----------Homework 2.2-----------");
 //		excercise_2_2();
 //		System.out.println("----------Homework 2.3-----------");
-//		excercise_2_3();
-		excercise_2_3_sol();
+		excercise_2_3();
+		// excercise_2_3_sol();
 		
 	}
 

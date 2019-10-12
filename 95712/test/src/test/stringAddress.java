@@ -9,7 +9,6 @@ public class stringAddress {
 		System.out.println(s + "'s address is" + s.hashCode());
 		s = s.concat("tonew");
 		System.out.println(t == s);
-
 	}
 
 }

@@ -13,11 +13,11 @@
 	</section>
 	<section name="RefactoringStatusDialog">
 		<item key="DIALOG_WIDTH" value="800"/>
-		<item key="DIALOG_HEIGHT" value="471"/>
-		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_HEIGHT" value="477"/>
+		<item key="DIALOG_FONT_NAME" value="1|.SF NS Text|13.0|0|COCOA|1|.SFNSText"/>
 	</section>
 	<section name="RefactoringWizard.Clean Up">
-		<item key="width" value="640"/>
-		<item key="height" value="400"/>
+		<item key="width" value="735"/>
+		<item key="height" value="410"/>
 	</section>
 </section>

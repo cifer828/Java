@@ -1,5 +1,7 @@
-// Name: Qiuchen Zhang
-// AndrewId: qiuchenz
+/*
+ * Author  : Qiuchen Zhang
+ * AndrewID: qiuchenz
+ */
 
 package hw1;
 

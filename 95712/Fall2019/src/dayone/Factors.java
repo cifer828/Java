@@ -3,7 +3,6 @@
 
 package dayone;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Factors {
@@ -19,6 +18,7 @@ public class Factors {
 		x = Math.abs(x);
 		if(x==0) {
 			System.out.println("Please enter a non-zero number");
+			input.close();
 			return;
 		}
 		else if(x > 1) {

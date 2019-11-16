@@ -2,9 +2,7 @@
 // Andrew-ID: qiuchenz
 package javaplacement;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +20,7 @@ public class DataModel {
 				Record r = new Record(splitedLine[0], splitedLine[1], splitedLine[2]);
 				recordList.add(r); 
 			}
+			br.close();
 		}
 		catch(Exception e){
 			System.out.println("The file is not available.");

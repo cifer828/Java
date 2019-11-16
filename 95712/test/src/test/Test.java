@@ -1,9 +1,5 @@
 package test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -31,7 +27,7 @@ class FileInputParser {
 	}
 }
 
-1class Person1 {
+class Person1 {
 	public void method1() {
 		System.out.println("Person 1");
 	}
@@ -55,6 +51,14 @@ class Undergrad1 extends Student1 {
 	}
 }
 public class Test {
+	static boolean isPrime(int num) {
+		for (int factor = 2; factor <= Math.sqrt(num) ; factor++) {
+			if (num % factor == 0)
+				return false;
+		}
+		return true;
+	}
+
 	int noValue;
 	String noString;
 	public static void main(String[] args) {
@@ -80,8 +84,11 @@ public class Test {
 //		System.out.println(testCharArray.length);
 		
 		// inheritance and polymorphism
-		Person1 u = new Undergrad1();
-		u.method1();
+//		Person1 u = new Undergrad1();
+//		u.method1();
+		
+		//prime test
+		System.out.println(Test.isPrime(2));
 		
 	}
 

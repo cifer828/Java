@@ -21,7 +21,9 @@
 	<section name="NewWizardAction">
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="924"/>
-		<item key="DIALOG_Y_ORIGIN" value="30"/>
+		<item key="DIALOG_X_ORIGIN" value="474"/>
+		<item key="DIALOG_Y_ORIGIN" value="160"/>
+	</section>
+	<section name="EditorSelectionDialog">
 	</section>
 </section>

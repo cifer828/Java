@@ -1,9 +1,14 @@
 package shoppingCart;
 
+
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -18,6 +23,14 @@ public class View {
 	Slider quantitySlider = new Slider(0, 10, 0); // min, max, current
 	Label purchasedUnitsValueLabel = new Label("0");
 	
+	Button addButton = new Button("Add to Cart");
+	Button removeButton = new Button("Remove from Cart");
+	
+	Label totalPriceValueLable = new Label();
+	TableView<ItemInCart> cartTableView = new TableView<>();
+	TableColumn<ItemInCart, Double> priceColumn = new TableColumn<>("Purchase price");
+	
+	@SuppressWarnings("unchecked")
 	BorderPane setupScene() {
 		BorderPane root = new BorderPane();
 		GridPane topGrid = new GridPane();
@@ -71,9 +84,46 @@ public class View {
 		purchasedUnitsValueLabel.setFont(Font.font(15));
 		purchasedUnitsValueLabel.setTextFill(Color.TEAL);
 		
+		// setup bottomGrid
+		GridPane bottomGrid = new GridPane();
+		root.setBottom(bottomGrid);
+		bottomGrid.setVgap(10);
+		bottomGrid.setHgap(10);
+		
+		// setup Add button and Total amount
+		Label totalLabel = new Label("Total amount: ");
+		addButton.setPrefWidth(150);;
+		addButton.setFont(Font.font(15));
+		addButton.setPrefWidth(150);
+		removeButton.setFont(Font.font(15));
+		totalLabel.setFont(Font.font(15));
+		totalPriceValueLable.setFont(Font.font(15));
+		
+		// setup table view
+		TableColumn<ItemInCart, String> nameColumn = new TableColumn<>("Item name");
+		nameColumn.setCellValueFactory(new PropertyValueFactory<ItemInCart, String>("name"));
+		TableColumn<ItemInCart, Double> qtyColumn = new TableColumn<>("Purchased Units");
+		qtyColumn.setCellValueFactory(new PropertyValueFactory<ItemInCart, Double>("quantity"));
+		
+		// set all columns to the table view
+		cartTableView.getColumns().setAll(nameColumn, qtyColumn, priceColumn);
+		cartTableView.setPrefSize(350,  200);
+		cartTableView.getColumns().get(0).setPrefWidth(100);
+		cartTableView.getColumns().get(1).setPrefWidth(100);
+		cartTableView.getColumns().get(2).setPrefWidth(250);
+		
+		bottomGrid.add(addButton, 0, 0);
+		bottomGrid.add(removeButton, 1, 0);
+		bottomGrid.add(cartTableView, 0, 1, 2, 1);
+		bottomGrid.add(totalLabel, 0, 2);
+		bottomGrid.add(totalPriceValueLable, 1, 2);
+		
 		topGrid.setPrefSize(700, 125);
+		bottomGrid.setPrefSize(325,  350);
 		root.setPrefSize(700, 150);
 		BorderPane.setMargin(topGrid, new Insets(10, 10, 10, 10));
+		BorderPane.setMargin(bottomGrid, new Insets(10, 10, 10, 10));
+		
 		return root;
 	}
 }

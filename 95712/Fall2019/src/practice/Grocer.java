@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.*;
 
-import javax.swing.plaf.basic.BasicComboBoxUI.ItemHandler;
-
 class Item {
 	protected String itemName;
 	protected int qty;

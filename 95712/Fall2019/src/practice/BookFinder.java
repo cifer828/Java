@@ -18,16 +18,17 @@ public class BookFinder {
 	}
 	private StringBuilder loadRecords() {
 		StringBuilder sb = new StringBuilder();
-		Scanner fileInput = null;
+		Scanner fileInput;
 		try {
 			fileInput = new Scanner(new File(fileName));
+			fileInput.close();
+			fileInput = fileInput.useDelimiter(";");
+			while (fileInput.hasNext()) {
+				sb.append(fileInput.next() + ";");
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		fileInput = fileInput.useDelimiter(";");
-		while (fileInput.hasNext()) {
-			sb.append(fileInput.next() + ";");
 		}
 		return sb;
 	}

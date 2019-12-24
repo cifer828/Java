@@ -27,7 +27,7 @@ public class SimpleSortDemo {
         for (int i = 0; i < size; i++) a[i] = rand.nextInt();
 
         // Case 2
-        //for (int i = 0; i < size; i++) a[i] = i;
+//        for (int i = 0; i < size; i++) a[i] = i;
 
         System.arraycopy(a, 0, b, 0, a.length);
         System.arraycopy(a, 0, c, 0, a.length);

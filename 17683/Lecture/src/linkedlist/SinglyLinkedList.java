@@ -1,7 +1,6 @@
 package linkedlist;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * 17683 Data Structures for Application Programmers.

@@ -19,6 +19,7 @@ public class practive3 {
 		else 
 			System.out.println("Your typing has errors!");
 		System.out.printf("Your speed is %f words per min", sentence.length() / (timeAfter - timeBefore) * 60000);
+		input.close();
 	}
 
 }

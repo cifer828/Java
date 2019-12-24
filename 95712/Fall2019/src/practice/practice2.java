@@ -14,5 +14,7 @@ public class practice2 {
 		while(tokens.hasNext()) 
 			sum += tokens.nextDouble();
 		System.out.print("The sum is " + sum);
+		input.close();
+		tokens.close();
 	}
 }

@@ -208,9 +208,10 @@
           <tags>persp.showIn:org.eclipse.egit.ui.RepositoriesView</tags>
           <tags>persp.viewSC:org.eclipse.jdt.junit.ResultView</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_pcQmIc7HEemXgu3NkP8WYQ" selectedElement="_pcQmKM7HEemXgu3NkP8WYQ" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_pcQmIc7HEemXgu3NkP8WYQ" selectedElement="_pcQmIs7HEemXgu3NkP8WYQ" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_pcQmIs7HEemXgu3NkP8WYQ" elementId="org.eclipse.debug.internal.ui.NavigatorFolderView" containerData="1824" selectedElement="_pcQmJM7HEemXgu3NkP8WYQ">
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_pcQmI87HEemXgu3NkP8WYQ" elementId="org.eclipse.debug.ui.DebugView" ref="_pcNi0M7HEemXgu3NkP8WYQ" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:Debug</tags>
@@ -349,7 +350,6 @@
       <children xsi:type="basic:PartStack" xmi:id="_ViMagc6-EemXgu3NkP8WYQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_rXMQQAKlEeqSMrfFTSz5fw">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_ynfKkNC_Eem3SZOIN7DKog" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FourSum.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FourSum.java&quot; partName=&quot;FourSum.java&quot; title=&quot;FourSum.java&quot; tooltip=&quot;first-round/src/FourSum.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/first-round/src/FourSum.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;224&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -421,8 +421,6 @@
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_yU4-kAMbEeqSMrfFTSz5fw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FindPairWithGivenSum.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FindPairWithGivenSum.java&quot; partName=&quot;FindPairWithGivenSum.java&quot; title=&quot;FindPairWithGivenSum.java&quot; tooltip=&quot;OA/src/Amazon/FindPairWithGivenSum.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/OA/src/Amazon/FindPairWithGivenSum.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;464&quot; selectionOffset=&quot;658&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
@@ -474,6 +472,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1567565250104&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_jMX1QOJ3Eem1rKAZaE7WAg" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -673,7 +673,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_VbPd8M6-EemXgu3NkP8WYQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WEqJsANIEeqOMbQZ6aL84g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_VHxIl86-EemXgu3NkP8WYQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Vz1nwCFKEeq9OtdVmBhxvQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_VHxIl86-EemXgu3NkP8WYQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_VbPd8c6-EemXgu3NkP8WYQ" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -704,7 +704,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_VbQFAM6-EemXgu3NkP8WYQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WEr-4gNIEeqOMbQZ6aL84g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_VHwhRM6-EemXgu3NkP8WYQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Vz3c8yFKEeq9OtdVmBhxvQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_VHwhRM6-EemXgu3NkP8WYQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_VbQFAc6-EemXgu3NkP8WYQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1027,7 +1027,7 @@
     <bindings xmi:id="_VIT6586-EemXgu3NkP8WYQ" keySequence="ALT+COMMAND+CTRL+D Q" command="_VHy9hs6-EemXgu3NkP8WYQ">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_V0rM8ANIEeqOMbQZ6aL84g" keySequence="COMMAND+CTRL+F" command="_VI2GY86-EemXgu3NkP8WYQ"/>
+    <bindings xmi:id="_ViagkCFKEeq9OtdVmBhxvQ" keySequence="COMMAND+CTRL+F" command="_VI2GY86-EemXgu3NkP8WYQ"/>
   </bindingTables>
   <bindingTables xmi:id="_VIKw-M6-EemXgu3NkP8WYQ" elementId="org.eclipse.core.runtime.xml" bindingContext="_VH2n-c6-EemXgu3NkP8WYQ">
     <bindings xmi:id="_VIKw-c6-EemXgu3NkP8WYQ" keySequence="CTRL+SHIFT+P" command="_VHwhgs6-EemXgu3NkP8WYQ"/>
@@ -1310,7 +1310,7 @@
     <bindings xmi:id="_VIT65M6-EemXgu3NkP8WYQ" keySequence="ALT+CR" command="_VHsP286-EemXgu3NkP8WYQ"/>
   </bindingTables>
   <bindingTables xmi:id="_VI2tcc6-EemXgu3NkP8WYQ" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_VHO83c6-EemXgu3NkP8WYQ">
-    <bindings xmi:id="_V0rM8QNIEeqOMbQZ6aL84g" keySequence="M1+W" command="_VI2GaM6-EemXgu3NkP8WYQ"/>
+    <bindings xmi:id="_ViagkSFKEeq9OtdVmBhxvQ" keySequence="M1+W" command="_VI2GaM6-EemXgu3NkP8WYQ"/>
   </bindingTables>
   <bindingTables xmi:id="_ViOPsc6-EemXgu3NkP8WYQ" bindingContext="_ViOPsM6-EemXgu3NkP8WYQ"/>
   <bindingTables xmi:id="_ViOPs86-EemXgu3NkP8WYQ" bindingContext="_ViOPss6-EemXgu3NkP8WYQ"/>

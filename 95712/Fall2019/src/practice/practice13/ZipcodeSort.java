@@ -15,9 +15,11 @@ class ZipcodeSort {
                 String [] oneLine = input.nextLine().split(",");
                 zipcodes.add(new Zipcode(oneLine[0], oneLine[1], oneLine[2]));
             }
+            input.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
     }
 
     List<Zipcode> sortZipcodes (){
@@ -38,7 +40,7 @@ class ZipcodeSort {
             else
                 countyMap.put(z.county, new County(z.county));
         }
-        counties = new ArrayList(countyMap.values());
+        counties = new ArrayList<>(countyMap.values());
     }
 
     public static void main(String[] args) {

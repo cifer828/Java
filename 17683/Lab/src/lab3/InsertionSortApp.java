@@ -1,4 +1,6 @@
 package lab3;
+
+
 /**
  * 17683 Data Structures for Application Programmers.
  * Lab 3 Simple Sorting and Stability
@@ -58,7 +60,37 @@ public class InsertionSortApp {
      * @param key key param value should be either "last" or "zip"
      */
     public static void insertionSort(Employee[] list, String key) {
-        // TODO implement insertion sort here
+    	if (key.equals("zip")){
+    		sortZip(list);
+    	}
+    	else if (key.equals("last")) {
+    		sortLastName(list);
+    	}
+
+    }
+    
+    private static void sortZip(Employee[] list) {
+        for(int i = 1; i < list.length; i++) {
+        	Employee temp = list[i];
+        	int j = i;
+        	while(j > 0 && list[j - 1].getZipCode() > temp.getZipCode()) {
+        		list[j] = list[j - 1];
+        		j--;
+        	}
+        	list[j] = temp;
+        }
+    }
+    
+    private static void sortLastName(Employee[] list) {
+        for(int i = 1; i < list.length; i++) {
+        	Employee temp = list[i];
+        	int j = i;
+        	while(j > 0 && list[j - 1].getLastName().compareTo(temp.getLastName()) > 0) {
+        		list[j] = list[j - 1];
+        		j--;
+        	}
+        	list[j] = temp;
+        }
     }
 
 }

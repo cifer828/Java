@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 
 public class Model {
 	ObservableList<Item> itemsObservableList = FXCollections.observableArrayList();
+	ObservableList<ItemInCart> cartObservableList = FXCollections.observableArrayList();
 	
 	void loadData() {
 		try(BufferedReader br = new BufferedReader(new FileReader("ItemsMaster.csv"))){

@@ -58,9 +58,35 @@ public class SelectionSortApp {
      * @param key key param value should be either "last" or "zip"
      */
     public static void selectionSort(Employee[] list, String key) {
-        // TODO implement selection sort here
+    	if (key.equals("zip")){
+    		sortZip(list);
+    	}
+    	else if (key.equals("last")) {
+    		sortLastName(list);
+    	}
+    }
+    
+    private static void sortZip(Employee[] list) {
+    	for(int i = 0; i < list.length; i++) {
+        	int minIdx = i;
+    		for (int j = i + 1; j < list.length;j++) {
+    			if (list[minIdx].getZipCode() > list[j].getZipCode())
+    				minIdx = j;
+    		}
+    		swap(list, minIdx, i);
+    	}
     }
 
+    private static void sortLastName(Employee[] list) {
+    	for(int i = 0; i < list.length; i++) {
+        	int minIdx = i;
+    		for (int j = i + 1; j < list.length;j++) {
+    			if (list[minIdx].getLastName().compareTo(list[j].getLastName()) > 0)
+    				minIdx = j;
+    		}
+    		swap(list, minIdx, i);
+    	}
+    }
     /**
      * private helper method to swap elements in an array.
      * @param list list of employee objects

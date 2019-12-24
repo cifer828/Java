@@ -32,8 +32,8 @@ public class Twister {
 		// TODO Auto-generated method stub
 		String[] someNames = {"James", "Anne", "Zach", "Bob"};
 		int [] someNumbers = {43, 67, 12, 90};
-		String [] name = twist(someNames);
-		int [] number = twist(someNumbers);
+		twist(someNames);
+		twist(someNumbers);
 	}
 
 }

@@ -37,7 +37,7 @@ public class MyArray {
      * @param initialCapacity initial capacity of the array
      */
     public MyArray(int initialCapacity) {
-        if (initialCapacity < 0) {
+        if (initialCapacity <= 0) {
             throw new IllegalArgumentException("Array length should be greater than or equal to 0");
         } else {
             array = new String[initialCapacity];
